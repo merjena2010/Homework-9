@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>My Hobbies</title>
+    <title>Merjen's Hobbies</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <nav>
-        <div class="nav-container">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/hobbies">Hobbies</a>
-        </div>
+        <a href="/">Home</a> | 
+        <a href="/about">About Me</a> | 
+        <a href="/hobbies">Hobbies</a>
     </nav>
-
+    <hr>
     <div class="container">
-        <h1>Things I Love</h1>
+        <h1>My Hobbies</h1>
         <ul>
             {% for hobby in hobbies %}
                 <li>{{ hobby }}</li>

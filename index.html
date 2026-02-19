@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merjen's Tennis Guest Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎾 Merjen's Tennis Fan Club</h1>
+        <p>Leave a message for the tennis star!</p>
+
+        <form method="POST" class="guestbook-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Post Message</button>
+        </form>
+
+        <hr>
+
+        <h3>Recent Messages ({{ messages|length }})</h3>
+        <div class="message-list">
+            {% if not messages %}
+                <p>No messages yet. Be the first to write!</p>
+            {% endif %}
+            
+            {% for m in messages %}
+            <div class="message-card">
+                <div class="card-content">
+                    <strong>{{ m.name }}</strong>
+                    <p>{{ m.message }}</p>
+                </div>
+                <a href="/delete/{{ m.id }}" class="delete-btn">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,22 +1,12 @@
-Home Route (/): This is the main landing page. It uses a variable to greet me by name and introduces the website.
 
-About Route (/about): This page displays a paragraph about who I am (a 15-year-old tennis player) and my interest in coding.
-
-Hobbies Route (/hobbies): This page displays a list of my favorite activities. It uses a loop to generate a list of items dynamically.
-
-2. How did you pass data to templates?
-I passed data using keyword arguments inside the render_template function.
-
-For the Home and About pages, I passed single string variables (e.g., name="Merjen").
-
-For the Hobbies page, I passed a Python List object. In the HTML template, I used a Jinja2 {% for %} loop to iterate through the list and display each hobby as a <li> item.
-
-3. What was challenging about Flask?
-The most challenging part was setting up the folder structure correctly. At first, my CSS wouldn't load because I didn't realize it had to be inside a folder named static. I also had to learn how to use url_for in my HTML to link the stylesheet properly so that the design would show up on every page.
-
-
-Home Page (Showing your name)
-
-About Page (Showing your bio)
-
-Hobbies Page 
+Homework 2: Reflection Answers
+1. How does the POST route process form data?
+In my app, when a user fills out the name and message boxes and clicks "Post," the browser sends that data to the server. My Flask route uses request.form.get to grab the name and the message. It then puts them into a dictionary and adds it to the list of messages so it can be displayed on the page.
+2. How did you implement delete functionality?
+I gave every message its own unique ID number. I created a special "Delete" link for each message. When you click it, it sends that message's ID to a specific route in Python. Python then looks through the list, removes the message that matches that ID, and saves the new list back to the file.
+3. What file operations did you use?
+I used the JSON module to save the data. I used json.load to read the messages from the file so they appear when the page opens. I used json.dump to save the data whenever a new message is added or one is deleted. This way, the messages don't disappear when I restart the app.
+4. What was your biggest challenge?
+The hardest part was making sure the app didn't crash if the messages.json file was missing or empty. I had to write a special check to see if the file existed first. If it didn't exist, I told Python to just start with an empty list.
+5. How did AI help you?
+AI helped me design the CSS so the guest book looks like a tennis court (green and yellow colors). It also helped me fix an error I had with the "Delete" route where the ID wasn't being recognized as a number.
