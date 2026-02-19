@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merjen's Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> | <a href="/about">About Me</a> | <a href="/hobbies">Hobbies</a>
+    </nav>
+    <div class="content">
+        <h1>Welcome to my Site!</h1>
+        <p>Hello! My name is <strong>{{ name }}</strong>. I am 15 years old and I'm a tennis player.</p>
+    </div>
+</body>
+</html>
